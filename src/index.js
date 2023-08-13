@@ -20,7 +20,7 @@ const AuthRoutes = () => {
     onAuthStateChanged(auth, (usr) => {
       if (usr?.displayName) {
         setUser(usr);
-        navigate(`/managers/${usr.uid}`);
+        navigate(`/admin`);
       } else {
         setUser(null);
         navigate("/auth");
@@ -29,8 +29,8 @@ const AuthRoutes = () => {
   }, [navigate]);
   return (
     <Routes>
-      <Route path={`/auth`} component={AuthLayout} />
-      {user && <Route path={`/admin`} component={AdminLayout} />}
+      <Route path={`/auth`} element={<AuthLayout />} />
+      {user && <Route path={`/admin`} element={<AdminLayout />} />}
     </Routes>
   );
 };

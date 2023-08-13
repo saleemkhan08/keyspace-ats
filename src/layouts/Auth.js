@@ -10,6 +10,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import theme from "theme/theme.js";
+import AuthPage from "views/Auth/SignIn";
 
 export default function Pages(props) {
   const { ...rest } = props;
@@ -92,12 +93,12 @@ export default function Pages(props) {
         <Portal containerRef={navRef}>
           <AuthNavbar
             secondary={getActiveNavbar(routes)}
-            logoText="PURITY UI DASHBOARD"
+            logoText="KeySpace"
           />
         </Portal>
         <Box w="100%">
           <Box ref={wrapper} w="100%">
-            {/* <Routes>{getRoutes(routes)}</Routes> */}
+            <AuthPage />
           </Box>
         </Box>
         <Box px="24px" mx="auto" width="1044px" maxW="100%">
