@@ -18,7 +18,7 @@ import {
   GlobeIcon,
   WalletIcon,
 } from "components/Icons/Icons.js";
-import React from "react";
+
 import { rtlDashboardTableData, rtlTimelineData } from "variables/general";
 import ActiveUsers from "../Dashboard/components/ActiveUsers";
 import BuiltByDevelopers from "../Dashboard/components/BuiltByDevelopers";

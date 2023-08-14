@@ -11,7 +11,8 @@ import {
 // Custom components
 import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
-import React from "react";
+
+import PropTypes from "prop-types";
 // react icons
 import { BsArrowRight } from "react-icons/bs";
 
@@ -77,5 +78,11 @@ const WorkWithTheRockets = ({ title, description, backgroundImage }) => {
     </Card>
   );
 };
+
+WorkWithTheRockets.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  backgroundImage: PropTypes.string,
+}
 
 export default WorkWithTheRockets;

@@ -9,7 +9,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
+import PropTypes from "prop-types";
 
 const ProjectCard = ({ image, name, category, avatars, description }) => {
   // Chakra color mode
@@ -57,5 +57,13 @@ const ProjectCard = ({ image, name, category, avatars, description }) => {
     </Flex>
   );
 };
+
+ProjectCard.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string,
+  category: PropTypes.string,
+  avatars: PropTypes.array,
+  description: PropTypes.string,
+}
 
 export default ProjectCard;

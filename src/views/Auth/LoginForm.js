@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 import * as yup from "yup";
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, FormProvider } from "react-hook-form";
@@ -17,7 +13,6 @@ import {
   FormControl,
   FormLabel,
   Heading,
-  Input,
   Link,
   Switch,
   Text,
@@ -38,9 +33,7 @@ export const LoginForm = ({ titleColor, textColor }) => {
     mode: "onBlur", // validate when input loses focus
     reValidateMode: "onChange", // re-validate when input value changes
   });
-  const {
-    formState: { errors },
-  } = methods;
+
   const onSubmit = async (data) => {
     console.log("Saldata : ", data);
     try {
@@ -53,19 +46,7 @@ export const LoginForm = ({ titleColor, textColor }) => {
       setLoading(false);
     }
   };
-  const provider = new GoogleAuthProvider();
 
-  const handleGoogleLogin = async () => {
-    try {
-      setLoading(true);
-      await signInWithPopup(auth, provider);
-    } catch (error) {
-      setLoginError(error.message);
-      console.log("LoginError : ", error);
-    } finally {
-      setLoading(false);
-    }
-  };
   let errorMsg = "";
   if (loginError?.includes("user-not-found")) {
     errorMsg = "User not found, Please try again with a different email!";
@@ -94,11 +75,11 @@ export const LoginForm = ({ titleColor, textColor }) => {
       <Text
         mb="36px"
         ms="4px"
-        color={textColor}
+        color={errorMsg ? "crimson" : textColor}
         fontWeight="bold"
         fontSize="14px"
       >
-        Enter your email and password to sign in
+        {errorMsg ? errorMsg : "Enter your email and password to sign in"}
       </Text>
       <FormControl>
         <FormProvider {...methods}>
@@ -152,6 +133,7 @@ export const LoginForm = ({ titleColor, textColor }) => {
             _active={{
               bg: "teal.400",
             }}
+            isLoading={loading}
             onClick={methods.handleSubmit(onSubmit)}
           >
             SIGN IN
@@ -174,4 +156,9 @@ export const LoginForm = ({ titleColor, textColor }) => {
       </Flex>
     </Flex>
   );
+};
+
+LoginForm.propTypes = {
+  titleColor: PropTypes.string,
+  textColor: PropTypes.string,
 };

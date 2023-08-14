@@ -9,7 +9,6 @@ import {
   Tr,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
 
 function DashboardTableRow(props) {
   const { logo, name, members, budget, progression } = props;

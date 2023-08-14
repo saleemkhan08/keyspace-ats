@@ -1,4 +1,5 @@
 import { Box, useStyleConfig } from "@chakra-ui/react";
+import PropTypes from "prop-types";
 function CardBody(props) {
   const { variant, children, ...rest } = props;
   const styles = useStyleConfig("CardBody", { variant });
@@ -8,6 +9,11 @@ function CardBody(props) {
       {children}
     </Box>
   );
+}
+
+CardBody.propTypes = {
+  variant: PropTypes.string,
+  children: PropTypes.node,
 }
 
 export default CardBody;

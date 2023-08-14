@@ -18,7 +18,6 @@ import {
   GlobeIcon,
   WalletIcon,
 } from "components/Icons/Icons.js";
-import React from "react";
 import { dashboardTableData, timelineData } from "variables/general";
 import ActiveUsers from "./components/ActiveUsers";
 import BuiltByDevelopers from "./components/BuiltByDevelopers";

@@ -10,26 +10,25 @@ import {
 } from "@chakra-ui/react";
 import {
   KeySpaceLogo,
-  DocumentIcon,
   HomeIcon,
   PersonIcon,
   RocketIcon,
 } from "components/Icons/Icons";
 import SidebarResponsive from "components/Sidebar/SidebarResponsive";
 import PropTypes from "prop-types";
-import React from "react";
+
 import { NavLink } from "react-router-dom";
 import routes from "routes.js";
 export default function AuthNavbar(props) {
-  const [open, setOpen] = React.useState(false);
-  const handleDrawerToggle = () => {
-    setOpen(!open);
-  };
-  const { logo, logoText, secondary, ...rest } = props;
+  // const [open, setOpen] = React.useState(false);
+  // const handleDrawerToggle = () => {
+  //   setOpen(!open);
+  // };
+  const { logoText, ...rest } = props;
   // verifies if routeName is the one active (in browser input)
-  const activeRoute = (routeName) => {
-    return window.location.href.indexOf(routeName) > -1 ? true : false;
-  };
+  // const activeRoute = (routeName) => {
+  //   return window.location.href.indexOf(routeName) > -1 ? true : false;
+  // };
   // Chakra color mode
   let navbarIcon = useColorModeValue("gray.700", "gray.200");
   let mainText = useColorModeValue("gray.700", "gray.200");
@@ -50,10 +49,11 @@ export default function AuthNavbar(props) {
     "drop-shadow(0px 7px 23px rgba(0, 0, 0, 0.05))"
   );
   let navbarBackdrop = "blur(21px)";
-  let bgButton = useColorModeValue(
-    "linear-gradient(81.62deg, #313860 2.25%, #151928 79.87%)",
-    "gray.800"
-  );
+  // let bgButton = useColorModeValue(
+  //   "linear-gradient(81.62deg, #313860 2.25%, #151928 79.87%)",
+  //   "gray.800"
+  // );
+  // let colorButton = null;
   let navbarPosition = "fixed";
   if (props.secondary === true) {
     navbarIcon = "white";
@@ -62,14 +62,14 @@ export default function AuthNavbar(props) {
     navbarShadow = "initial";
     navbarFilter = "initial";
     navbarBackdrop = "none";
-    bgButton = "white";
-    colorButton = "gray.700";
+    // bgButton = "white";
+    // colorButton = "gray.700";
     mainText = "white";
     navbarPosition = "absolute";
   }
   var brand = (
     <Link
-      href={`${process.env.PUBLIC_URL}/#/`}
+      // href={`${process.env.PUBLIC_URL}/#/`}
       target="_blank"
       display="flex"
       alignItems="center"

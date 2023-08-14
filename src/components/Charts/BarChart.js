@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import Card from "components/Card/Card";
 import Chart from "react-apexcharts";
 import { barChartData, barChartOptions } from "variables/charts";

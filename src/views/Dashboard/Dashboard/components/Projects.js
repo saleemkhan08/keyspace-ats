@@ -14,7 +14,7 @@ import {
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import DashboardTableRow from "components/Tables/DashboardTableRow";
-import React from "react";
+import PropTypes from "prop-types";
 import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
 
 const Projects = ({ title, amount, captions, data }) => {
@@ -74,5 +74,12 @@ const Projects = ({ title, amount, captions, data }) => {
     </Card>
   );
 };
+
+Projects.propTypes = {
+  title: PropTypes.string,
+  amount: PropTypes.number,
+  captions: PropTypes.array,
+  data: PropTypes.array,
+}
 
 export default Projects;

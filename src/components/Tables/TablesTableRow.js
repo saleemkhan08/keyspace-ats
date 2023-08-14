@@ -8,7 +8,6 @@ import {
   Tr,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
 
 function TablesTableRow(props) {
   const { logo, name, email, subdomain, domain, status, date } = props;

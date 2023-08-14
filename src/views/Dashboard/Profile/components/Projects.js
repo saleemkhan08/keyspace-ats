@@ -7,6 +7,8 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import PropTypes from "prop-types";
+
 // Assets
 import avatar2 from "assets/img/avatars/avatar2.png";
 import avatar4 from "assets/img/avatars/avatar4.png";
@@ -18,7 +20,6 @@ import imageArchitect3 from "assets/img/ImageArchitect3.png";
 import Card from "components/Card/Card";
 import CardBody from "components/Card/CardBody";
 import CardHeader from "components/Card/CardHeader";
-import React from "react";
 import { FaPlus } from "react-icons/fa";
 import ProjectCard from "./ProjectCard";
 
@@ -89,5 +90,11 @@ const Projects = ({ title, description }) => {
     </Card>
   );
 };
+
+Projects.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+
+}
 
 export default Projects;

@@ -3,7 +3,7 @@ import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 // Custom components
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
-import React from "react";
+import PropTypes from "prop-types";
 
 const SalesOverview = ({ title, percentage, chart }) => {
   const textColor = useColorModeValue("gray.700", "white");
@@ -31,5 +31,11 @@ const SalesOverview = ({ title, percentage, chart }) => {
     </Card>
   );
 };
+
+SalesOverview.propTypes = {
+  title: PropTypes.string,
+  percentage: PropTypes.number,
+  chart: PropTypes.object,
+}
 
 export default SalesOverview;

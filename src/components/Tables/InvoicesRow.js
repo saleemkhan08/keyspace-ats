@@ -7,7 +7,6 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
 
 function InvoicesRow(props) {
   const textColor = useColorModeValue("gray.700", "white");

@@ -4,8 +4,8 @@ import { Flex, Icon, Link, Text, useColorModeValue } from "@chakra-ui/react";
 import Card from "components/Card/Card";
 import CardBody from "components/Card/CardBody";
 import CardHeader from "components/Card/CardHeader";
-import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 const ProfileInformation = ({
   title,
@@ -98,5 +98,14 @@ const ProfileInformation = ({
     </Card>
   );
 };
+
+ProfileInformation.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  name: PropTypes.string,
+  mobile: PropTypes.string,
+  email: PropTypes.string,
+  location: PropTypes.string,
+}
 
 export default ProfileInformation;

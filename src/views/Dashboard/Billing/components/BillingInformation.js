@@ -5,7 +5,7 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import CardHeader from "components/Card/CardHeader.js";
 import BillingRow from "components/Tables/BillingRow";
-import React from "react";
+
 
 const BillingInformation = ({ title, data }) => {
   const textColor = useColorModeValue("gray.700", "white");
@@ -22,6 +22,7 @@ const BillingInformation = ({ title, data }) => {
             {data.map((row) => {
               return (
                 <BillingRow
+                  key={row.name}
                   name={row.name}
                   company={row.company}
                   email={row.email}

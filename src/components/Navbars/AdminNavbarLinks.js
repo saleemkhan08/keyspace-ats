@@ -2,7 +2,6 @@
 import { BellIcon, SearchIcon } from "@chakra-ui/icons";
 // Chakra Imports
 import {
-  Button,
   Flex,
   IconButton,
   Input,
@@ -12,7 +11,6 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
-  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 // Assets
@@ -20,17 +18,17 @@ import avatar1 from "assets/img/avatars/avatar1.png";
 import avatar2 from "assets/img/avatars/avatar2.png";
 import avatar3 from "assets/img/avatars/avatar3.png";
 // Custom Icons
-import { ProfileIcon, SettingsIcon, LogoutIcon } from "components/Icons/Icons";
+import { SettingsIcon } from "components/Icons/Icons";
 // Custom Components
 import { ItemContent } from "components/Menu/ItemContent";
 import SidebarResponsive from "components/Sidebar/SidebarResponsive";
 import PropTypes from "prop-types";
 import React from "react";
-import { NavLink } from "react-router-dom";
+
 import routes from "routes.js";
 
 export default function HeaderLinks(props) {
-  const { variant, children, fixed, secondary, onOpen, ...rest } = props;
+  const { secondary, ...rest } = props;
 
   // Chakra Color Mode
   let mainTeal = useColorModeValue("teal.300", "teal.300");
@@ -67,24 +65,22 @@ export default function HeaderLinks(props) {
           borderColor: { mainTeal },
         }}
       >
-        <InputLeftElement
-          children={
-            <IconButton
-              bg="inherit"
-              borderRadius="inherit"
-              _hover="none"
-              _active={{
-                bg: "inherit",
-                transform: "none",
-                borderColor: "transparent",
-              }}
-              _focus={{
-                boxShadow: "none",
-              }}
-              icon={<SearchIcon color={searchIcon} w="15px" h="15px" />}
-            ></IconButton>
-          }
-        />
+        <InputLeftElement>
+          <IconButton
+            bg="inherit"
+            borderRadius="inherit"
+            _hover="none"
+            _active={{
+              bg: "inherit",
+              transform: "none",
+              borderColor: "transparent",
+            }}
+            _focus={{
+              boxShadow: "none",
+            }}
+            icon={<SearchIcon color={searchIcon} w="15px" h="15px" />}
+          ></IconButton>
+        </InputLeftElement>
         <Input
           fontSize="xs"
           py="11px"

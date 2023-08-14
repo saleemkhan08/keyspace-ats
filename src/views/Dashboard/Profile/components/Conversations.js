@@ -6,6 +6,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import PropTypes from "prop-types";
 // Assets
 import avatar2 from "assets/img/avatars/avatar2.png";
 import avatar3 from "assets/img/avatars/avatar3.png";
@@ -16,7 +17,6 @@ import avatar6 from "assets/img/avatars/avatar6.png";
 import Card from "components/Card/Card";
 import CardBody from "components/Card/CardBody";
 import CardHeader from "components/Card/CardHeader";
-import React from "react";
 
 const Conversations = ({ title }) => {
   // Chakra color mode
@@ -176,5 +176,9 @@ const Conversations = ({ title }) => {
     </Card>
   );
 };
+
+Conversations.propTypes = {
+  title: PropTypes.string,  
+}
 
 export default Conversations;

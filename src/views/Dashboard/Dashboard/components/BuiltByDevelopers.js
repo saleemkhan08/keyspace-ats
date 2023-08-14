@@ -10,7 +10,8 @@ import {
 // Custom components
 import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
-import React from "react";
+import PropTypes from "prop-types";
+
 // react icons
 import { BsArrowRight } from "react-icons/bs";
 
@@ -81,5 +82,12 @@ const BuiltByDevelopers = ({ title, name, description, image }) => {
     </Card>
   );
 };
+
+BuiltByDevelopers.propTypes = {
+  title: PropTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.element,
+}
 
 export default BuiltByDevelopers;

@@ -1,10 +1,10 @@
 // Chakra imports
 import { Flex, Switch, Text, useColorModeValue } from "@chakra-ui/react";
+import PropTypes from "prop-types";
 // Custom components
 import Card from "components/Card/Card";
 import CardBody from "components/Card/CardBody";
 import CardHeader from "components/Card/CardHeader";
-import React from "react";
 
 const PlatformSettings = ({ title, subtitle1, subtitle2 }) => {
   // Chakra color mode
@@ -69,5 +69,12 @@ const PlatformSettings = ({ title, subtitle1, subtitle2 }) => {
     </Card>
   );
 };
+
+PlatformSettings.propTypes = {
+  title: PropTypes.string,
+  subtitle1: PropTypes.string,
+  subtitle2: PropTypes.string,
+
+}
 
 export default PlatformSettings;

@@ -2,7 +2,7 @@
 import { Box, Link, Stack, Text } from "@chakra-ui/react";
 import { KeySpaceLogo } from "components/Icons/Icons";
 import { Separator } from "components/Separator/Separator";
-import React from "react";
+
 import { SideBarLinks } from "./SideBarLinks";
 
 const SidebarContent = ({ logoText, routes }) => {
@@ -10,7 +10,7 @@ const SidebarContent = ({ logoText, routes }) => {
     <>
       <Box mb="15px">
         <Link
-          href={`${process.env.PUBLIC_URL}/#/`}
+          // href={`${process.env.PUBLIC_URL}/#/`}
           target="_blank"
           display="flex"
           lineHeight="100%"

@@ -1,7 +1,7 @@
-import React from "react";
+
 
 // chakra imports
-import { Button, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import { Button, Flex, Icon, Text, useColorModeValue } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import IconBox from "components/Icons/IconBox";
 import { NavLink } from "react-router-dom";

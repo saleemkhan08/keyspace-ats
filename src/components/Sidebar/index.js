@@ -1,7 +1,8 @@
 // chakra imports
 import { Box, useColorModeValue } from "@chakra-ui/react";
-import React from "react";
+
 import SidebarContent from "./SidebarContent";
+import React from "react";
 
 // FUNCTIONS
 
@@ -17,8 +18,9 @@ function Sidebar(props) {
   let sidebarBg = "none";
   let sidebarRadius = "0px";
   let sidebarMargins = "0px";
+  sidebarBg = useColorModeValue("white", "gray.700");
+  
   if (sidebarVariant === "opaque") {
-    sidebarBg = useColorModeValue("white", "gray.700");
     sidebarRadius = "16px";
     sidebarMargins = "16px 0px 16px 16px";
   }

@@ -5,7 +5,6 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import CardHeader from "components/Card/CardHeader.js";
 import InvoicesRow from "components/Tables/InvoicesRow";
-import React from "react";
 
 const Invoices = ({ title, data }) => {
   const textColor = useColorModeValue("gray.700", "white");
@@ -36,6 +35,7 @@ const Invoices = ({ title, data }) => {
           {data.map((row) => {
             return (
               <InvoicesRow
+                key={row.title}
                 date={row.date}
                 code={row.code}
                 price={row.price}
