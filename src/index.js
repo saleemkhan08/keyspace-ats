@@ -28,18 +28,17 @@ const AuthRoutes = () => {
         navigate(`/accounts`);
       } else {
         setUser(null);
-        navigate("/auth");
+        navigate("/");
       }
     });
   }, []);
   return (
     <Routes>
-      <Route path="/auth" element={<AuthLayout />} />
+      <Route index element={<AuthLayout />} />
       {user && (
         <Route path="/accounts" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="job-openings" element={<Tables />} />
+          <Route path="jobs" element={<Tables />} />
           <Route path="leaves" element={<Billing />} />
           <Route path="profile" element={<Profile />} />
         </Route>

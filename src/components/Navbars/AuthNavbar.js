@@ -55,7 +55,6 @@ export default function AuthNavbar(props) {
     "gray.800"
   );
   let navbarPosition = "fixed";
-  let colorButton = "white";
   if (props.secondary === true) {
     navbarIcon = "white";
     navbarBg = "none";
@@ -73,6 +72,7 @@ export default function AuthNavbar(props) {
       href={`${process.env.PUBLIC_URL}/#/`}
       target="_blank"
       display="flex"
+      alignItems="center"
       position="relative"
       lineHeight="100%"
       fontWeight="bold"
@@ -86,25 +86,23 @@ export default function AuthNavbar(props) {
   );
   var linksAuth = (
     <HStack display={{ sm: "none", lg: "flex" }}>
-      <NavLink to="/admin/dashboard">
+      <NavLink to="#about">
         <Button
           fontSize="sm"
           ms="0px"
-          me="0px"
           px="0px"
           me={{ sm: "2px", md: "16px" }}
           color={navbarIcon}
           variant="transparent-with-icon"
           leftIcon={<HomeIcon color={navbarIcon} w="12px" h="12px" me="0px" />}
         >
-          <Text>Dashboard</Text>
+          <Text>About Us</Text>
         </Button>
       </NavLink>
-      <NavLink to="/admin/profile">
+      <NavLink to="#pricing">
         <Button
           fontSize="sm"
           ms="0px"
-          me="0px"
           px="0px"
           me={{ sm: "2px", md: "16px" }}
           color={navbarIcon}
@@ -113,14 +111,13 @@ export default function AuthNavbar(props) {
             <PersonIcon color={navbarIcon} w="12px" h="12px" me="0px" />
           }
         >
-          <Text>Profile</Text>
+          <Text>Pricing</Text>
         </Button>
       </NavLink>
-      <NavLink to="/auth/signup">
+      <NavLink to="#contact">
         <Button
           fontSize="sm"
           ms="0px"
-          me="0px"
           px="0px"
           me={{ sm: "2px", md: "16px" }}
           color={navbarIcon}
@@ -129,22 +126,7 @@ export default function AuthNavbar(props) {
             <RocketIcon color={navbarIcon} w="12px" h="12px" me="0px" />
           }
         >
-          <Text>Sign Up</Text>
-        </Button>
-      </NavLink>
-      <NavLink to="/auth/signin">
-        <Button
-          fontSize="sm"
-          ms="0px"
-          px="0px"
-          me={{ sm: "2px", md: "16px" }}
-          color={navbarIcon}
-          variant="transparent-with-icon"
-          leftIcon={
-            <DocumentIcon color={navbarIcon} w="12px" h="12px" me="0px" />
-          }
-        >
-          <Text>Sign In</Text>
+          <Text>Contact Us</Text>
         </Button>
       </NavLink>
     </HStack>
@@ -183,22 +165,6 @@ export default function AuthNavbar(props) {
           />
         </Box>
         {linksAuth}
-        <Link href="#">
-          <Button
-            bg={bgButton}
-            color={colorButton}
-            fontSize="xs"
-            variant="no-hover"
-            borderRadius="35px"
-            px="30px"
-            display={{
-              sm: "none",
-              lg: "flex",
-            }}
-          >
-            Free Download
-          </Button>
-        </Link>
       </Flex>
     </Flex>
   );

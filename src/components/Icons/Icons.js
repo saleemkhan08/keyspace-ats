@@ -130,6 +130,28 @@ export const CreditIcon = createIcon({
   ),
 });
 
+export const TimeOffIcon = createIcon({
+  displayName: "TimeOff",
+  viewBox: "0 0 24 24",
+  path: (
+    <path
+      fill="currentColor"
+      d="M9.31 17l2.44-2.44L14.19 17l1.06-1.06-2.44-2.44 2.44-2.44L14.19 10l-2.44 2.44L9.31 10l-1.06 1.06 2.44 2.44-2.44 2.44L9.31 17zM19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"
+    />
+  ),
+});
+
+export const JobsIcon = createIcon({
+  displayName: "Jobs",
+  viewBox: "0 0 24 24",
+  path: (
+    <path
+      fill="currentColor"
+      d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"
+    />
+  ),
+});
+
 export const DashboardLogo = createIcon({
   displayName: "DashboardLogo",
   viewBox: "0 0 1000 257",

@@ -1,10 +1,9 @@
 import { LogoutIcon } from "components/Icons/Icons";
 import {
   HomeIcon,
-  StatsIcon,
-  CreditIcon,
+  TimeOffIcon,
+  JobsIcon,
   PersonIcon,
-  DocumentIcon,
 } from "components/Icons/Icons";
 
 var dashRoutes = [
@@ -15,15 +14,15 @@ var dashRoutes = [
     layout: "/accounts",
   },
   {
-    path: "/job-openings",
-    name: "Job Openings",
-    icon: <DocumentIcon color="inherit" />,
+    path: "/jobs",
+    name: "Jobs",
+    icon: <JobsIcon color="inherit" />,
     layout: "/accounts",
   },
   {
     path: "/leaves",
     name: "Leaves",
-    icon: <CreditIcon color="inherit" />,
+    icon: <TimeOffIcon color="inherit" />,
     layout: "/accounts",
   },
   {

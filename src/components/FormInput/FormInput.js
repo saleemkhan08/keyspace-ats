@@ -12,9 +12,9 @@ const FormInput = ({ className, name, label, type = "text", ...rest }) => {
     <div className={className}>
       <Input
         borderRadius="15px"
-        mb="5px"
+        mb={error ? "5px" : "24px"}
         fontSize="sm"
-        type="text"
+        type={type}
         placeholder="Your email adress"
         size="lg"
         isInvalid={!!error}
