@@ -35,7 +35,6 @@ export const LoginForm = ({ titleColor, textColor }) => {
   });
 
   const onSubmit = async (data) => {
-    console.log("Saldata : ", data);
     try {
       setLoading(true);
       await signInWithEmailAndPassword(auth, data.email, data.password);
@@ -47,14 +46,17 @@ export const LoginForm = ({ titleColor, textColor }) => {
     }
   };
 
-  let errorMsg = "";
+  let errorMsg = null;
+
   if (loginError?.includes("user-not-found")) {
     errorMsg = "User not found, Please try again with a different email!";
   } else if (loginError?.includes("wrong-password")) {
     errorMsg = "Invalid Password, Please try again!";
-  } else {
+  } else if (loginError) {
     errorMsg = "An Error occured, Please try again later!";
   }
+
+  console.log("Saldata : ", { loginError, errorMsg });
   const handleFocus = () => {
     {
       console.log("Saldata : handleFocus");

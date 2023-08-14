@@ -20,6 +20,7 @@ import { KeySpaceLogo } from "components/Icons/Icons";
 import { Separator } from "components/Separator/Separator";
 
 import { SideBarLinks } from "./SideBarLinks";
+import React from "react";
 
 function SidebarResponsive(props) {
   const mainPanel = React.useRef();

@@ -1,4 +1,5 @@
 
+import React from "react";
 import ReactApexChart from "react-apexcharts";
 import { lineChartData, lineChartOptions } from "variables/charts";
 

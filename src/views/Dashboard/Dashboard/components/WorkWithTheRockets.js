@@ -13,6 +13,7 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 
 import PropTypes from "prop-types";
+import React from "react";
 // react icons
 import { BsArrowRight } from "react-icons/bs";
 

@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 // Chakra Imports
 import {
   Box,
@@ -8,7 +9,6 @@ import {
   DrawerContent,
   DrawerHeader,
   Flex,
-  Icon,
   Link,
   Switch,
   Text,
@@ -18,11 +18,11 @@ import {
 import GitHubButton from "react-github-btn";
 import { Separator } from "components/Separator/Separator";
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+
 import { FaTwitter, FaFacebook } from "react-icons/fa";
 
 export default function Configurator(props) {
-  const { secondary, isOpen, onClose, fixed, ...rest } = props;
+  // const { secondary, isOpen, onClose, fixed, ...rest } = props;
   const [switched, setSwitched] = useState(props.isChecked);
 
   const { colorMode, toggleColorMode } = useColorMode();
@@ -110,7 +110,7 @@ export default function Configurator(props) {
                 <Switch
                   colorScheme="teal"
                   isChecked={switched}
-                  onChange={(event) => {
+                  onChange={() => {
                     if (switched === true) {
                       props.onSwitch(false);
                       setSwitched(false);
@@ -143,11 +143,7 @@ export default function Configurator(props) {
                   Choose between 2 different sidenav types.
                 </Text>
                 <Box>
-                  <Link
-                    href="#"
-                    w="100%"
-                    mb="16px"
-                  >
+                  <Link href="#" w="100%" mb="16px">
                     <Button
                       w="100%"
                       mb="16px"
@@ -160,10 +156,7 @@ export default function Configurator(props) {
                       Free Download
                     </Button>
                   </Link>
-                  <Link
-                    href="#"
-                    w="100%"
-                  >
+                  <Link href="#" w="100%">
                     <Button
                       w="100%"
                       bg={secondaryButtonBg}
@@ -199,10 +192,7 @@ export default function Configurator(props) {
                     Thank you for sharing!
                   </Text>
                   <Flex justifyContent="center" alignContent="center">
-                    <Link
-                      isExternal="true"
-                      href="#"
-                    >
+                    <Link isExternal="true" href="#">
                       <Button
                         colorScheme="twitter"
                         leftIcon={<FaTwitter />}
@@ -211,10 +201,7 @@ export default function Configurator(props) {
                         <Text>Tweet</Text>
                       </Button>
                     </Link>
-                    <Link
-                      isExternal="true"
-                      href="#"
-                    >
+                    <Link isExternal="true" href="#">
                       <Button colorScheme="facebook" leftIcon={<FaFacebook />}>
                         <Text>Share</Text>
                       </Button>
