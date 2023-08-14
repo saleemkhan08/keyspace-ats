@@ -20,7 +20,7 @@ import avatar1 from "assets/img/avatars/avatar1.png";
 import avatar2 from "assets/img/avatars/avatar2.png";
 import avatar3 from "assets/img/avatars/avatar3.png";
 // Custom Icons
-import { ProfileIcon, SettingsIcon } from "components/Icons/Icons";
+import { ProfileIcon, SettingsIcon, LogoutIcon } from "components/Icons/Icons";
 // Custom Components
 import { ItemContent } from "components/Menu/ItemContent";
 import SidebarResponsive from "components/Sidebar/SidebarResponsive";
@@ -104,18 +104,18 @@ export default function HeaderLinks(props) {
             document.documentElement.dir ? (
               ""
             ) : (
-              <ProfileIcon color={navbarIcon} w="22px" h="22px" me="0px" />
+              <LogoutIcon color={navbarIcon} w="22px" h="22px" me="0px" />
             )
           }
           leftIcon={
             document.documentElement.dir ? (
-              <ProfileIcon color={navbarIcon} w="22px" h="22px" me="0px" />
+              <LogoutIcon color={navbarIcon} w="22px" h="22px" me="0px" />
             ) : (
               ""
             )
           }
         >
-          <Text display={{ sm: "none", md: "flex" }}>Sign In</Text>
+          <Text display={{ sm: "none", md: "flex" }}>Logout</Text>
         </Button>
       </NavLink>
       <SidebarResponsive

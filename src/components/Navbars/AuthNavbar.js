@@ -9,7 +9,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import {
-  CreativeTimLogo,
+  KeySpaceLogo,
   DocumentIcon,
   HomeIcon,
   PersonIcon,
@@ -73,13 +73,12 @@ export default function AuthNavbar(props) {
       href={`${process.env.PUBLIC_URL}/#/`}
       target="_blank"
       display="flex"
+      position="relative"
       lineHeight="100%"
       fontWeight="bold"
-      justifyContent="center"
-      alignItems="center"
       color={mainText}
     >
-      <CreativeTimLogo w="32px" h="32px" me="10px" />
+      <KeySpaceLogo w="32px" h="32px" me="10px" mt="16px" />
       <Text fontSize="sm" mt="3px">
         {logoText}
       </Text>

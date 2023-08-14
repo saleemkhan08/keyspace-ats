@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useFormContext } from "react-hook-form";
-import { Input } from "@chakra-ui/react";
+import { Input, Text } from "@chakra-ui/react";
 
 const FormInput = ({ className, name, label, type = "text", ...rest }) => {
   const {
@@ -12,7 +12,7 @@ const FormInput = ({ className, name, label, type = "text", ...rest }) => {
     <div className={className}>
       <Input
         borderRadius="15px"
-        mb="24px"
+        mb="5px"
         fontSize="sm"
         type="text"
         placeholder="Your email adress"
@@ -22,6 +22,11 @@ const FormInput = ({ className, name, label, type = "text", ...rest }) => {
         {...register(name)}
         {...rest}
       />
+      {error && (
+        <Text fontSize="xs" color="crimson" mb="24px" ml="5px">
+          {error.message}
+        </Text>
+      )}
     </div>
   );
 };

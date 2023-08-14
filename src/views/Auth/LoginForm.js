@@ -22,6 +22,7 @@ import {
   Switch,
   Text,
 } from "@chakra-ui/react";
+import FormInput from "components/FormInput/FormInput";
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -37,7 +38,11 @@ export const LoginForm = ({ titleColor, textColor }) => {
     mode: "onBlur", // validate when input loses focus
     reValidateMode: "onChange", // re-validate when input value changes
   });
+  const {
+    formState: { errors },
+  } = methods;
   const onSubmit = async (data) => {
+    console.log("Saldata : ", data);
     try {
       setLoading(true);
       await signInWithEmailAndPassword(auth, data.email, data.password);
@@ -70,6 +75,9 @@ export const LoginForm = ({ titleColor, textColor }) => {
     errorMsg = "An Error occured, Please try again later!";
   }
   const handleFocus = () => {
+    {
+      console.log("Saldata : handleFocus");
+    }
     setLoginError("");
   };
   return (
@@ -97,9 +105,9 @@ export const LoginForm = ({ titleColor, textColor }) => {
           <FormLabel ms="4px" fontSize="sm" fontWeight="normal">
             Email
           </FormLabel>
-          <Input
+          <FormInput
+            name="email"
             borderRadius="15px"
-            mb="24px"
             fontSize="sm"
             type="text"
             placeholder="Your email adress"
@@ -109,9 +117,9 @@ export const LoginForm = ({ titleColor, textColor }) => {
           <FormLabel ms="4px" fontSize="sm" fontWeight="normal">
             Password
           </FormLabel>
-          <Input
+          <FormInput
+            name="password"
             borderRadius="15px"
-            mb="36px"
             fontSize="sm"
             type="password"
             placeholder="Your password"
@@ -144,6 +152,7 @@ export const LoginForm = ({ titleColor, textColor }) => {
             _active={{
               bg: "teal.400",
             }}
+            onClick={methods.handleSubmit(onSubmit)}
           >
             SIGN IN
           </Button>
