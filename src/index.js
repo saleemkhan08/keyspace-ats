@@ -7,6 +7,11 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+import Dashboard from "views/Dashboard/Dashboard";
+import Tables from "views/Dashboard/Tables";
+import Billing from "views/Dashboard/Billing";
+import Profile from "views/Dashboard/Profile";
+
 import AuthLayout from "layouts/Auth.js";
 import AdminLayout from "layouts/Admin.js";
 
@@ -20,17 +25,25 @@ const AuthRoutes = () => {
     onAuthStateChanged(auth, (usr) => {
       if (usr?.displayName) {
         setUser(usr);
-        navigate(`/admin`);
+        navigate(`/accounts`);
       } else {
         setUser(null);
         navigate("/auth");
       }
     });
-  }, [navigate]);
+  }, []);
   return (
     <Routes>
-      <Route path={`/auth`} element={<AuthLayout />} />
-      {user && <Route path={`/admin`} element={<AdminLayout />} />}
+      <Route path="/auth" element={<AuthLayout />} />
+      {user && (
+        <Route path="/accounts" element={<AdminLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="job-openings" element={<Tables />} />
+          <Route path="leaves" element={<Billing />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
+      )}
     </Routes>
   );
 };

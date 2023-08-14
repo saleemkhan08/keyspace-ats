@@ -7,7 +7,7 @@ import Footer from "components/Footer/Footer.js";
 import AdminNavbar from "components/Navbars/AdminNavbar.js";
 import Sidebar from "components/Sidebar";
 import React, { useState } from "react";
-import { Redirect, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import routes from "routes.js";
 // Custom Chakra theme
 import theme from "theme/theme.js";
@@ -124,12 +124,7 @@ export default function Dashboard(props) {
           </Portal>
           {getRoute() ? (
             <PanelContent>
-              <PanelContainer>
-                {/* <Switch>
-                  {getRoutes(routes)}
-                  <Redirect from="/rtl" to="/rtl/rtl-support-page" />
-                </Switch> */}
-              </PanelContainer>
+              <PanelContainer></PanelContainer>
             </PanelContent>
           ) : null}
           <Footer />

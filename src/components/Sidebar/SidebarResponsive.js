@@ -19,7 +19,6 @@ import {
 import IconBox from "components/Icons/IconBox";
 import { KeySpaceLogo } from "components/Icons/Icons";
 import { Separator } from "components/Separator/Separator";
-import { SidebarHelp } from "components/Sidebar/SidebarHelp";
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -42,9 +41,6 @@ function SidebarResponsive(props) {
     const inactiveColor = useColorModeValue("gray.400", "gray.400");
 
     return routes.map((prop, key) => {
-      if (prop.redirect) {
-        return null;
-      }
       if (prop.category) {
         var st = {};
         st[prop["state"]] = !state[prop.state];
@@ -63,9 +59,7 @@ function SidebarResponsive(props) {
               }}
               py="12px"
             >
-              {document.documentElement.dir === "rtl"
-                ? prop.rtlName
-                : prop.name}
+              {prop.name}
             </Text>
             {createLinks(prop.views)}
           </div>
@@ -117,9 +111,7 @@ function SidebarResponsive(props) {
                   </IconBox>
                 )}
                 <Text color={activeColor} my="auto" fontSize="sm">
-                  {document.documentElement.dir === "rtl"
-                    ? prop.rtlName
-                    : prop.name}
+                  {prop.name}
                 </Text>
               </Flex>
             </Button>
@@ -167,9 +159,7 @@ function SidebarResponsive(props) {
                   </IconBox>
                 )}
                 <Text color={inactiveColor} my="auto" fontSize="sm">
-                  {document.documentElement.dir === "rtl"
-                    ? prop.rtlName
-                    : prop.name}
+                  {prop.name}
                 </Text>
               </Flex>
             </Button>
@@ -206,7 +196,7 @@ function SidebarResponsive(props) {
           {logoText}
         </Text>
       </Link>
-      <Separator></Separator>
+      <Separator />
     </Box>
   );
 
@@ -256,7 +246,6 @@ function SidebarResponsive(props) {
               <Stack direction="column" mb="40px">
                 <Box>{links}</Box>
               </Stack>
-              <SidebarHelp></SidebarHelp>
             </Box>
           </DrawerBody>
         </DrawerContent>

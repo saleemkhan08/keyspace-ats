@@ -1,4 +1,3 @@
-/*eslint-disable*/
 // chakra imports
 import { Box, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
@@ -11,7 +10,7 @@ function Sidebar(props) {
   const mainPanel = React.useRef();
   let variantChange = "0.2s linear";
 
-  const { logoText, routes, sidebarVariant } = props;
+  const { routes, sidebarVariant } = props;
 
   //  BRAND
   //  Chakra Color Mode

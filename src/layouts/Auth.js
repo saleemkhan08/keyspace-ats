@@ -4,7 +4,7 @@ import Footer from "components/Footer/Footer.js";
 // core components
 import AuthNavbar from "components/Navbars/AuthNavbar.js";
 import React from "react";
-import { Redirect, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import routes from "routes.js";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -91,10 +91,7 @@ export default function Pages(props) {
     <ChakraProvider theme={theme} resetCss={false} w="100%">
       <Box ref={navRef} w="100%">
         <Portal containerRef={navRef}>
-          <AuthNavbar
-            secondary={getActiveNavbar(routes)}
-            logoText="KeySpace"
-          />
+          <AuthNavbar secondary={getActiveNavbar(routes)} logoText="KeySpace" />
         </Portal>
         <Box w="100%">
           <Box ref={wrapper} w="100%">
