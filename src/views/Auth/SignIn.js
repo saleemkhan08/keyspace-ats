@@ -1,19 +1,7 @@
-import React, { useState } from "react";
+// import { useState } from "react";
 
 // Chakra imports
-import {
-  Box,
-  Flex,
-  Button,
-  FormControl,
-  FormLabel,
-  Heading,
-  Input,
-  Link,
-  Switch,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 // Assets
 import signInImage from "assets/img/signInImage.png";
 import { LoginForm } from "./LoginForm";
@@ -21,7 +9,7 @@ import { LoginForm } from "./LoginForm";
 function SignIn() {
   const titleColor = useColorModeValue("teal.300", "teal.200");
   const textColor = useColorModeValue("gray.400", "white");
-  const [formType, setFormType] = useState("login");
+  // const [formType, setFormType] = useState("login");
   return (
     <Flex position="relative" mb="40px">
       <Flex
@@ -42,7 +30,7 @@ function SignIn() {
           <LoginForm
             titleColor={titleColor}
             textColor={textColor}
-            onFormTypeChange={setFormType}
+            // onFormTypeChange={setFormType}
           />
         </Flex>
         <Box

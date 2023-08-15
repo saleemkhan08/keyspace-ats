@@ -18,20 +18,59 @@ import {
   GlobeIcon,
   WalletIcon,
 } from "components/Icons/Icons.js";
-import { dashboardTableData, timelineData } from "variables/general";
+import {
+  // dashboardTableData,
+  timelineData,
+  dashboardTableDataWithType,
+} from "variables/general";
 import ActiveUsers from "./components/ActiveUsers";
 import BuiltByDevelopers from "./components/BuiltByDevelopers";
 import MiniStatistics from "./components/MiniStatistics";
 import OrdersOverview from "./components/OrdersOverview";
-import Projects from "./components/Projects";
+// import Projects from "./components/Projects";
 import SalesOverview from "./components/SalesOverview";
 import WorkWithTheRockets from "./components/WorkWithTheRockets";
+import { getUsers } from "../Users/userService";
+import { useEffect, useState } from "react";
+import Authors from "../Tables/components/Authors";
+import TableComponent from "components/Tables/components/TableComponent";
+import { projectsTableConfig } from "components/Tables/projectsTableConfig";
 
 export default function Dashboard() {
   const iconBoxInside = useColorModeValue("white", "white");
+  const [users, setUsers] = useState();
+  const [cursor, setCursor] = useState();
+  const fetchUsers = async () => {
+    const { list, lastDoc } = await getUsers({
+      collectionName: "users",
+      sortField: "email",
+      sortDirection: "asc",
+      pageSize: 10,
+      lastDoc: cursor,
+    });
+    setUsers(list);
+    setCursor(lastDoc);
+  };
 
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+  console.log("Users : ", { users });
   return (
     <Flex flexDirection="column" pt={{ base: "120px", md: "75px" }}>
+      <Authors
+        title="Users"
+        captions={[
+          "User",
+          "PhoneNumber",
+          "Designation",
+          "Manager Email",
+          "Team",
+          "DOB",
+          "Role",
+        ]}
+        data={users}
+      />
       <SimpleGrid columns={{ sm: 1, md: 2, xl: 4 }} spacing="24px">
         <MiniStatistics
           title={"Today's Moneys"}
@@ -108,11 +147,15 @@ export default function Dashboard() {
         templateRows={{ sm: "1fr auto", md: "1fr", lg: "1fr" }}
         gap="24px"
       >
-        <Projects
+        {/* <Projects
           title={"Projects"}
           amount={30}
           captions={["Companies", "Members", "Budget", "Completion"]}
           data={dashboardTableData}
+        /> */}
+        <TableComponent
+          config={projectsTableConfig}
+          data={dashboardTableDataWithType}
         />
         <OrdersOverview
           title={"Orders Overview"}

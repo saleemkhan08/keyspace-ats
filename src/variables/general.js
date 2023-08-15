@@ -29,6 +29,64 @@ import {
 } from "react-icons/fa";
 import { SiDropbox } from "react-icons/si";
 
+export const CELL_TYPES = {
+  AVATAR: "avatar",
+  DOMAIN: "domain",
+  STATUS: "status",
+  DATE: "date",
+  EDIT: "edit",
+  LOGO_WITH_NAME: "logoWithName",
+  MEMBERS: "members",
+  BUDGET: "budget",
+  PROGRESSION: "progression",
+  // Add other cell types as needed...
+};
+
+export const dashboardTableDataWithType = [
+  {
+    logo: AdobexdLogo,
+    name: "KeySpace UI Version",
+    members: [avatar1, avatar2, avatar3, avatar4, avatar5],
+    budget: "$14,000",
+    progression: 60,
+  },
+  {
+    logo: AtlassianLogo,
+    name: "Add Progress Track",
+    members: [avatar3, avatar2],
+    budget: "$3,000",
+    progression: 10,
+  },
+  {
+    logo: SlackLogo,
+    name: "Fix Platform Errors",
+    members: [avatar10, avatar4],
+    budget: "Not set",
+    progression: 100,
+  },
+  {
+    logo: SpotifyLogo,
+    name: "Launch our Mobile App",
+    members: [avatar2, avatar3, avatar7, avatar8],
+    budget: "$32,000",
+    progression: 100,
+  },
+  {
+    logo: JiraLogo,
+    name: "Add the New Pricing Page",
+    members: [avatar10, avatar3, avatar7, avatar2, avatar8],
+    budget: "$400",
+    progression: 25,
+  },
+  {
+    logo: InvisionLogo,
+    name: "Redesign New Online Shop",
+    members: [avatar9, avatar3, avatar2],
+    budget: "$7,600",
+    progression: 40,
+  },
+];
+
 export const dashboardTableData = [
   {
     logo: AdobexdLogo,

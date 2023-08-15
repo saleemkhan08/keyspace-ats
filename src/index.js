@@ -7,7 +7,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-import Dashboard from "views/Dashboard/Dashboard";
+import Dashboard from "features/Dashboard";
 import Tables from "views/Dashboard/Tables";
 import Billing from "views/Dashboard/Billing";
 import Profile from "views/Dashboard/Profile";
@@ -47,6 +47,7 @@ const AuthRoutes = () => {
   );
 };
 
+// eslint-disable-next-line react/no-deprecated
 ReactDOM.render(
   <Router>
     <AuthRoutes />
