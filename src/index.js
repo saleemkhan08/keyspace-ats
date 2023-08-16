@@ -23,7 +23,8 @@ const AuthRoutes = () => {
   const navigate = useNavigate();
   useEffect(() => {
     onAuthStateChanged(auth, (usr) => {
-      if (usr?.displayName) {
+      console.log("SalLogin", usr);
+      if (usr?.email) {
         setUser(usr);
         navigate(`/accounts`);
       } else {

@@ -30,7 +30,6 @@ const bulkUserCreate = async (users) => {
     if (user.email) {
       const docRef = doc(db, "userUploads", user.email);
       batch.set(docRef, user);
-      console.log("SalValue : ", { docRef, user });
     }
   });
   return batch.commit(); // Returns a promise

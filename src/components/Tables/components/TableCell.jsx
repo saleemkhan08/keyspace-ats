@@ -10,6 +10,7 @@ import {
   Icon,
   Progress,
 } from "@chakra-ui/react";
+import { CELL_TYPES } from "./TableConstants";
 
 const TableCell = ({ type, data }) => {
   const textColor = useColorModeValue("gray.700", "white");
@@ -17,11 +18,16 @@ const TableCell = ({ type, data }) => {
   const colorStatus = useColorModeValue("white", "gray.400");
 
   switch (type) {
-    case "avatar":
+    case CELL_TYPES.AVATAR:
       return (
         <Td minWidth={{ sm: "250px" }} pl="0px">
           <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
-            <Avatar src={data.logo} w="50px" borderRadius="12px" me="18px" />
+            <Avatar
+              src={data.photoUrl}
+              w="50px"
+              borderRadius="12px"
+              me="18px"
+            />
             <Flex direction="column">
               <Text
                 fontSize="md"
@@ -38,7 +44,7 @@ const TableCell = ({ type, data }) => {
           </Flex>
         </Td>
       );
-    case "domain":
+    case CELL_TYPES.DOMAIN:
       return (
         <Td>
           <Flex direction="column">
@@ -51,7 +57,7 @@ const TableCell = ({ type, data }) => {
           </Flex>
         </Td>
       );
-    case "status":
+    case CELL_TYPES.STATUS:
       return (
         <Td>
           <Badge
@@ -65,7 +71,7 @@ const TableCell = ({ type, data }) => {
           </Badge>
         </Td>
       );
-    case "date":
+    case CELL_TYPES.DATE:
       return (
         <Td>
           <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
@@ -73,7 +79,15 @@ const TableCell = ({ type, data }) => {
           </Text>
         </Td>
       );
-    case "edit":
+    case CELL_TYPES.TEXT:
+      return (
+        <Td>
+          <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
+            {data.date}
+          </Text>
+        </Td>
+      );
+    case CELL_TYPES.EDIT:
       return (
         <Td>
           <Button p="0px" bg="transparent" variant="no-hover">
@@ -88,7 +102,7 @@ const TableCell = ({ type, data }) => {
           </Button>
         </Td>
       );
-    case "logoWithName":
+    case CELL_TYPES.LOGO_WITH_NAME:
       return (
         <Td minWidth={{ sm: "250px" }} pl="0px">
           <Flex align="center" py=".8rem" minWidth="100%" flexWrap="nowrap">
@@ -105,7 +119,7 @@ const TableCell = ({ type, data }) => {
         </Td>
       );
 
-    case "members":
+    case CELL_TYPES.MEMBERS:
       return (
         <Td>
           <AvatarGroup size="sm">
@@ -121,7 +135,7 @@ const TableCell = ({ type, data }) => {
         </Td>
       );
 
-    case "budget":
+    case CELL_TYPES.BUDGET:
       return (
         <Td>
           <Text fontSize="md" color={textColor} fontWeight="bold" pb=".5rem">
@@ -130,7 +144,7 @@ const TableCell = ({ type, data }) => {
         </Td>
       );
 
-    case "progression":
+    case CELL_TYPES.PROGRESSION:
       return (
         <Td>
           <Flex direction="column">

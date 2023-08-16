@@ -1,18 +1,16 @@
 // Chakra imports
 import { Flex } from "@chakra-ui/react";
-
-import { dashboardTableDataWithType } from "variables/general";
-
 import { useEffect, useState } from "react";
-import TableComponent from "components/Tables/components/TableComponent";
-import { projectsTableConfig } from "components/Tables/projectsTableConfig";
 
 import { getUsers } from "./services/userService";
-import Authors from "./components/Authors";
+import UsersTable from "./components/UsersTable";
 
 export default function Dashboard() {
+  // TODO move users to redux state
   const [users, setUsers] = useState();
+  // TODO move users to redux state
   const [cursor, setCursor] = useState();
+
   const fetchUsers = async () => {
     const { list, lastDoc } = await getUsers({
       collectionName: "users",
@@ -26,30 +24,19 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
+    // TODO Reload when paginated or sorted of searched
     fetchUsers();
   }, []);
 
   console.log("Users : ", { users });
-  
+  // TODO add search functionality
+  // TODO add pagination
+  // TODO add sorting
+  // TODO add more UI elements to Dashboard
+  // TODO add total count
   return (
     <Flex flexDirection="column" pt={{ base: "120px", md: "75px" }}>
-      <Authors
-        title="Users"
-        captions={[
-          "User",
-          "PhoneNumber",
-          "Designation",
-          "Manager Email",
-          "Team",
-          "DOB",
-          "Role",
-        ]}
-        data={users}
-      />
-      <TableComponent
-        config={projectsTableConfig}
-        data={dashboardTableDataWithType}
-      />
+      <UsersTable data={users} />
     </Flex>
   );
 }
